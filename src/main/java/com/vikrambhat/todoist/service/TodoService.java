@@ -47,32 +47,6 @@ public class TodoService {
     }
 
     @Transactional
-    public Todo updateTodo(Long id, String title, String description, boolean isComplete) {
-        Todo todo = getTodoById(id);
-        todo.setTitle(title);
-        todo.setDescription(description);
-        todo.setComplete(isComplete);
-        return todoRepository.save(todo);
-    }
-    @Transactional
-    public Todo updateTodo(Long id, String title) {
-        Todo todo = getTodoById(id);
-        todo.setTitle(title);
-        return todoRepository.save(todo);
-    }
-    @Transactional
-    public Todo updateTodo(String description, Long id) {
-        Todo todo = getTodoById(id);
-        todo.setDescription(description);
-        return todoRepository.save(todo);
-    }
-    @Transactional
-    public Todo updateTodo(Long id, boolean isComplete) {
-        Todo todo = getTodoById(id);
-        todo.setComplete(isComplete);
-        return todoRepository.save(todo);
-    }
-    @Transactional
     public void deleteTodoById(Long id) {
         todoRepository.deleteById(id);
     }
